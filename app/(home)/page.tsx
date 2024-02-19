@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const API_URL = 'https://nomad-movies.nomadcoders.workers.dev/movies';
 
-async function getMovies() {
+async function getMovie() {
   console.log('fetch!'); // 서버에서만 표시됨
   await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch(API_URL);
@@ -16,7 +16,7 @@ interface HomeProps {
 }
 
 export default async function Home() {
-  const movies = await getMovies();
+  const movies = await getMovie();
 
   return (
     <main className='p-24'>
