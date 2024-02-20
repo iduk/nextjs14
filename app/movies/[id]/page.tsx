@@ -2,20 +2,21 @@ import MovieInfo from '@/app/components/movie-info';
 import MovieVideo from '@/app/components/movie-video';
 import { Suspense } from 'react';
 
-export default async function MoviePage({
+export default async function MovieDetail({
   params: { id },
 }: {
   params: { id: string };
 }) {
   return (
-    <main className='p-24'>
-      <Suspense fallback={<h1>loading Info..</h1>}>
+    <>
+      <h3 className='text-lg font-bold'>영화정보</h3>
+      <Suspense fallback={<h1>정보를 불러오는중</h1>}>
         <MovieInfo id={id} />
       </Suspense>
-      <div>--------------------</div>
-      <Suspense fallback={<h1>loading Video..</h1>}>
+      <h3 className='text-lg font-bold'>영상보기</h3>
+      <Suspense fallback={<h1>영상을 불러오는중</h1>}>
         <MovieVideo id={id} />
       </Suspense>
-    </main>
+    </>
   );
 }

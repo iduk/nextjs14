@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import variables from '@/app/styles/variables.module.scss'
 
 export const API_URL = 'https://nomad-movies.nomadcoders.workers.dev/movies';
 
@@ -19,19 +19,11 @@ export default async function Home() {
   const movies = await getMovie();
 
   return (
-    <main className='p-24'>
-      <h1 className='text-gray-400 p-8'>🏠 Home</h1>
-      <div className='border border-gray-500 p-8'>
-        <ul>
-          {movies.map((movie: HomeProps) => (
-            <li key={movie.id}>
-              <Link className='underline' href={`/movies/${movie.id}`}>
-                {movie.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <div className='mx-auto w-full max-w-7xl lg:px-8'>
+      <div className='relative px-4 sm:px-8 lg:px-12'>
+        <h1 style={{ color: variables.primaryColor }} className='py-8 font-bold text-5xl'>Home Contents</h1>
+        <p>Hello?</p>
       </div>
-    </main>
+    </div>
   );
 }

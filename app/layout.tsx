@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import Nav from './components/nav';
-import "./globals.css";
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
     default: 'DD',
     // absolute: '2',
-    template: 'DD | %s'
+    template: 'DD | %s',
   },
-  description: "댄스윗미",
-}
+  description: '댄스윗미',
+};
 
 export default function RootLayout({
   children,
@@ -22,11 +22,14 @@ export default function RootLayout({
   danceTeam: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={inter.className}>
-        <Nav />
-        {children}
-        {danceTeam}
+        <div className='p-4'>
+          <Nav />
+        </div>
+        <main className='relative w-screen'>
+          {children}
+        </main>
       </body>
     </html>
   );
