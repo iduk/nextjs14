@@ -1,0 +1,17 @@
+// color root
+@function color($name) {
+  @return var(--#{$name});
+}
+// color tint
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+// color shade
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// var(--'themeColor')
+@mixin theme-color($color, $value) {
+  --color-#{$color}: #{$value};
+}

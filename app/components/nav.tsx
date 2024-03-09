@@ -67,7 +67,7 @@ export default function Nav() {
                 <li key={index}>
                   <Link
                     href={link.path}
-                    className={`relative block px-3 py-2 transition hover:text-gray-500 dark:hover:text-gray-400 ${isActive(link.path) ? 'text-red-500' : ''}`}
+                    className={`relative block px-3 py-2 transition hover:text-gray-500 dark:hover:text-gray-400 ${isActive(link.path) ? 'text-primary-500' : ''}`}
                   >
                     {link.name}
                   </Link>

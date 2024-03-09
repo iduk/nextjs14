@@ -1,4 +1,3 @@
-import variables from '@/app/styles/variables.module.scss';
 import Image from 'next/image';
 import pixelDuk from '@/app/images/pixelDuk.svg';
 
@@ -23,12 +22,7 @@ export default async function Home() {
   return (
     <div className='mx-auto w-full max-w-7xl lg:px-8'>
       <div className='relative px-4 sm:px-8 lg:px-12'>
-        <h1
-          style={{ color: variables.primaryColor }}
-          className='py-8 font-bold text-5xl'
-        >
-          Home Contents
-        </h1>
+        <h1 className='py-8 font-bold text-5xl text-primary'>Home Contents</h1>
         <p>Hello?</p>
       </div>
       <hr />
@@ -82,9 +76,9 @@ export default async function Home() {
           <Image
             alt='pixelDuk'
             src={pixelDuk}
-            width={300}
-            height={300}
-            sizes='100vw'
+            // width={200}
+            // height={200}
+            // sizes='100vw'
             style={{
               width: '100%',
               height: 'auto',

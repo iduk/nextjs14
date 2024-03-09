@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Nav from './components/nav';
 import '@/app/styles/globals.css';
+import '@/app/styles/theme.scss';
+import Providers from './components/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,9 +26,9 @@ export default function RootLayout({
         <div className='p-4'>
           <Nav />
         </div>
-        <main className='relative w-screen'>
-          {children}
-        </main>
+        <Providers>
+          <main className='relative w-screen'>{children}</main>
+        </Providers>
       </body>
     </html>
   );

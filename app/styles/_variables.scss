@@ -1,0 +1,14 @@
+// variables
+
+// colors
+$palatte: (
+  primary: #328eff,
+  secondary: #8d52f3,
+  yellow: #d7f70b,
+);
+
+:root {
+  @each $color, $value in $palatte {
+    @include theme-color($color, $value);
+  }
+}
